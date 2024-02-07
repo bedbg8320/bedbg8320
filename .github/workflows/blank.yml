@@ -1,0 +1,83 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+            - নাম: সেটআপ Node.js পরিবেশ
+  ব্যবহার করে: actions/setup-node@v4.0.2
+  সঙ্গে:
+    # npmrc-এ সর্বদা-প্রমাণ সেট করুন।
+    always-auth: # ঐচ্ছিক, ডিফল্ট মিথ্যা
+    # ভার্সনের ভার্সন স্পেক ব্যবহার করতে হবে। উদাহরণ: 12.x, 10.15.1, >=10.15.0।
+    নোড-সংস্করণ: # ঐচ্ছিক
+    # ফাইলটিতে ভার্সনটির স্পেক ব্যবহার করতে হবে। উদাহরণ: package.json, .nvmrc, .node-version, .tool-versions।
+    node-version-file: # ঐচ্ছিক
+    # নোড ব্যবহারের জন্য লক্ষ্য আর্কিটেকচার। উদাহরণ: x86, x64। ডিফল্টরূপে সিস্টেম আর্কিটেকচার ব্যবহার করবে।
+    স্থাপত্য: # ঐচ্ছিক
+    # এই বিকল্পটি সেট করুন যদি আপনি কর্মটি সর্বশেষ উপলব্ধ সংস্করণের জন্য পরীক্ষা করতে চান যা সংস্করণের বৈশিষ্ট্যকে সন্তুষ্ট করে।
+    চেক-লেটেস্ট: # ঐচ্ছিক
+    # অনুমোদনের জন্য সেট আপ করার জন্য ঐচ্ছিক রেজিস্ট্রি। একটি প্রজেক্ট লেভেল .npmrc এবং .yarnrc ফাইলে রেজিস্ট্রি সেট করবে এবং env.NODE_AUTH_TOKEN থেকে পড়ার জন্য auth সেট আপ করবে।
+    registry-url: # ঐচ্ছিক
+    # স্কোপড রেজিস্ট্রিগুলির বিরুদ্ধে প্রমাণীকরণের জন্য ঐচ্ছিক সুযোগ। GitHub প্যাকেজ রেজিস্ট্রি (https://npm.pkg.github.com/) ব্যবহার করার সময় সংগ্রহস্থলের মালিকের কাছে ফিরে যাবে।
+    সুযোগ: # ঐচ্ছিক
+    # নোড-সংস্করণ থেকে নোড ডিস্ট্রিবিউশন টানতে ব্যবহৃত হয়। যেহেতু একটি ডিফল্ট আছে, এটি সাধারণত ব্যবহারকারী দ্বারা সরবরাহ করা হয় না। github.com এ এই ক্রিয়াটি চালানোর সময়, ডিফল্ট মান যথেষ্ট। GHES এ চলাকালীন, আপনি যদি রেট সীমিত করার সম্মুখীন হন তাহলে github.com-এর জন্য একটি ব্যক্তিগত অ্যাক্সেস টোকেন পাস করতে পারেন।
+    টোকেন: # ঐচ্ছিক, ডিফল্ট হল ${{ github.server_url == 'https://github.com' && github.token || '' }}
+    # ডিফল্ট ডিরেক্টরিতে ক্যাশে করার জন্য একটি প্যাকেজ ম্যানেজার নির্দিষ্ট করতে ব্যবহৃত হয়। সমর্থিত মান: npm, সুতা, pnpm.
+    ক্যাশে: # ঐচ্ছিক
+    # একটি নির্ভরতা ফাইলের পাথ নির্দিষ্ট করতে ব্যবহৃত হয়: package-lock.json, yarn.lock, ইত্যাদি। একাধিক নির্ভরতা ক্যাশে করার জন্য ওয়াইল্ডকার্ড বা ফাইল নামের তালিকা সমর্থন করে।
+    cache-dependency-path: # ঐচ্ছিক
+                      - নাম: সেটআপ Node.js পরিবেশ
+  ব্যবহার করে: actions/setup-node@v4.0.2
+  সঙ্গে:
+    # npmrc-এ সর্বদা-প্রমাণ সেট করুন।
+    always-auth: # ঐচ্ছিক, ডিফল্ট মিথ্যা
+    # ভার্সনের ভার্সন স্পেক ব্যবহার করতে হবে। উদাহরণ: 12.x, 10.15.1, >=10.15.0।
+    নোড-সংস্করণ: # ঐচ্ছিক
+    # ফাইলটিতে ভার্সনটির স্পেক ব্যবহার করতে হবে। উদাহরণ: package.json, .nvmrc, .node-version, .tool-versions।
+    node-version-file: # ঐচ্ছিক
+    # নোড ব্যবহারের জন্য লক্ষ্য আর্কিটেকচার। উদাহরণ: x86, x64। ডিফল্টরূপে সিস্টেম আর্কিটেকচার ব্যবহার করবে।
+    স্থাপত্য: # ঐচ্ছিক
+    # এই বিকল্পটি সেট করুন যদি আপনি কর্মটি সর্বশেষ উপলব্ধ সংস্করণের জন্য পরীক্ষা করতে চান যা সংস্করণের বৈশিষ্ট্যকে সন্তুষ্ট করে।
+    চেক-লেটেস্ট: # ঐচ্ছিক
+    # অনুমোদনের জন্য সেট আপ করার জন্য ঐচ্ছিক রেজিস্ট্রি। একটি প্রজেক্ট লেভেল .npmrc এবং .yarnrc ফাইলে রেজিস্ট্রি সেট করবে এবং env.NODE_AUTH_TOKEN থেকে পড়ার জন্য auth সেট আপ করবে।
+    registry-url: # ঐচ্ছিক
+    # স্কোপড রেজিস্ট্রিগুলির বিরুদ্ধে প্রমাণীকরণের জন্য ঐচ্ছিক সুযোগ। GitHub প্যাকেজ রেজিস্ট্রি (https://npm.pkg.github.com/) ব্যবহার করার সময় সংগ্রহস্থলের মালিকের কাছে ফিরে যাবে।
+    সুযোগ: # ঐচ্ছিক
+    # নোড-সংস্করণ থেকে নোড ডিস্ট্রিবিউশন টানতে ব্যবহৃত হয়। যেহেতু একটি ডিফল্ট আছে, এটি সাধারণত ব্যবহারকারী দ্বারা সরবরাহ করা হয় না। github.com এ এই ক্রিয়াটি চালানোর সময়, ডিফল্ট মান যথেষ্ট। GHES এ চলাকালীন, আপনি যদি রেট সীমিত করার সম্মুখীন হন তাহলে github.com-এর জন্য একটি ব্যক্তিগত অ্যাক্সেস টোকেন পাস করতে পারেন।
+    টোকেন: # ঐচ্ছিক, ডিফল্ট হল ${{ github.server_url == 'https://github.com' && github.token || '' }}
+    # ডিফল্ট ডিরেক্টরিতে ক্যাশে করার জন্য একটি প্যাকেজ ম্যানেজার নির্দিষ্ট করতে ব্যবহৃত হয়। সমর্থিত মান: npm, সুতা, pnpm.
+    ক্যাশে: # ঐচ্ছিক
+    # একটি নির্ভরতা ফাইলের পাথ নির্দিষ্ট করতে ব্যবহৃত হয়: package-lock.json, yarn.lock, ইত্যাদি। একাধিক নির্ভরতা ক্যাশে করার জন্য ওয়াইল্ডকার্ড বা ফাইল নামের তালিকা সমর্থন করে।
+    cache-dependency-path: # ঐচ্ছিক
+          
